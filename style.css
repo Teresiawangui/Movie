@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #22254B;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #373B69;
+}
+.search{
+    background-color: transparent;
+    border: 2px solid #22254B;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    margin-left: -250%;
+    width: 200%;
+}
+.search::placeholder{
+    color: #fff;
+}
+.search:focus{
+    outline: none;
+    background-color: #22254B;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-left: 9.5%;
+    cursor: pointer;
+}
+.movie{
+    width: 300px;
+    margin: 1rem;
+    background-color: #373B69;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    padding: 1rem;
+}
+.movie img{
+    width: 100%;
+}
+#chill{
+    margin-top: 40%;
+    color: yellow;
+}
+.movie-info{
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+.movie-info h3{
+    margin-top: 0;
+}
+.movie-info span{
+    background-color: none;
+}
+.hidden {
+    display: none;
+}
+.overview {
+    display: none;
+    color: #eee;
+    background-color: #373B69;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.overview.show {
+    display: block;
+}
+.green {
+    color: green;
+  }
+  .orange {
+    color: orange;
+  }
+  .red {
+    color: red;
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 9%;
+    height: 100vh;
+    background-color: #373B69;
+    color: #fff;
+    padding: 1rem;
+    border-right: 1px solid #22254B;
+    transition: left 0.3s ease-out;
+  }
+  .hide-genres{
+    left: 0;
+    z-index: 1000;
+  }
+  .genres{
+   margin-top: -30%;
+  }
+  .genres h3 {
+    margin-top: 0;
+    font-size: large;
+  }
+  .genres ul {
+    list-style-type: none;
+    padding: 0;
+    list-style-type: none;
+  }
+  .genres li {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+  .genres li:hover {
+    color: #7378C5;
+}
+#genre-list ul {
+    margin-right: 10px;
+    display: block;
+}
+.rating{
+  color: yellow;
+}
+.movie-page {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.movie-page img {
+  width: 50%;
+  height: 100%;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.movie-page .overview {
+  width: 50%;
+  height: 100%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.movie-page .overview h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.movie-page .overview p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+h2{
+  margin-top: -20%;
+  margin-left: 10%;
+  color: rgb(241, 190, 9);
+  font-weight: 300px;
+}
+.hamburger-menu {
+    display: none; /* Initially hidden */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.movie h3.truncate {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+    aside {
+        width: 25%; 
+    }
+   .movie {
+        width: calc(75% - 2rem); 
+        margin-left: 2rem; 
+    }
+    h2{
+        margin-top: -20%;
+        margin-left: 10%;
+        color: rgb(241, 190, 9);
+        font-size: 20px;
+      }
+      header{
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #373B69;
+    }
+      
+}
+
+
+@media screen and (max-width: 768px) {
+  header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #373B69;
+}
+    .search {
+        display: block; 
+        width: 125%; 
+        margin-left: 90px; 
+    }
+    .hamburger-menu {
+        display: block;
+        margin-right: 1rem;
+    }
+    aside {
+        width: 0;
+        left: -50%; 
+    }
+    .movie{
+            width: calc(80% - 2rem); 
+            margin-left: 2rem; 
+    }
+    .hide-genres {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    aside {
+        width: 15%; 
+    }
+   .movie {
+        width: calc(85% - 2rem); 
+        margin-left: 2rem; 
+    }
+   
+  .hamburger-menu {
+    display: block;
+    margin-right: 1rem;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
